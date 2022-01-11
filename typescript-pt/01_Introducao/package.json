@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "start": "live-server"
+  },
+  "dependencies": {
+    "live-server": "^1.2.1",
+    "ts-node": "^10.4.0"
+  }
+}
