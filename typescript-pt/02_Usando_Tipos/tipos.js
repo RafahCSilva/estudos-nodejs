@@ -138,3 +138,4 @@ let contato2 = {
     tel2: null,
 };
 console.log(contato2.tel2);
+//# sourceMappingURL=tipos.js.map
