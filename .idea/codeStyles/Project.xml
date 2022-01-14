@@ -21,7 +21,8 @@
       <option name="USE_DOUBLE_QUOTES" value="false" />
       <option name="FORCE_QUOTE_STYlE" value="true" />
       <option name="ENFORCE_TRAILING_COMMA" value="WhenMultiline" />
-      <option name="CHAINED_CALL_DOT_ON_NEW_LINE" value="false" />
+      <option name="USE_CHAINED_CALLS_GROUP_INDENTS" value="true" />
+      <option name="BLANK_LINES_AROUND_FUNCTION" value="0" />
     </TypeScriptCodeStyleSettings>
     <codeStyleSettings language="HTML">
       <indentOptions>
@@ -55,6 +56,9 @@
     <codeStyleSettings language="TypeScript">
       <option name="RIGHT_MARGIN" value="250" />
       <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
+      <option name="BLANK_LINES_AROUND_METHOD" value="0" />
+      <option name="BLANK_LINES_AROUND_METHOD_IN_INTERFACE" value="0" />
+      <option name="ALIGN_MULTILINE_CHAINED_METHODS" value="true" />
       <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
       <option name="ALIGN_MULTILINE_FOR" value="false" />
       <option name="SPACE_WITHIN_PARENTHESES" value="true" />
