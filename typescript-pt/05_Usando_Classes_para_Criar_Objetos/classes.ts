@@ -210,6 +210,6 @@ class Aviao {
 }
 
 const turboHelice = new Aviao('Tu-114', 'PT-ABC')
-turboHelice.modelo = 'DC-8'
-turboHelice.prefixo = 'PT-DEF'
+// turboHelice.modelo = 'DC-8'
+// turboHelice.prefixo = 'PT-DEF'
 
