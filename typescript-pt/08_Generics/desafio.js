@@ -35,8 +35,8 @@ mapa.colocar({ chave: 2, valor: 'Rebeca' });
 mapa.colocar({ chave: 3, valor: 'Maria' });
 mapa.colocar({ chave: 1, valor: 'Gustavo' });
 console.log(mapa.obter(2));
-console.log(mapa.obter(5));
 mapa.imprimir();
 mapa.limpar();
 mapa.imprimir();
+console.log(mapa.obter(5));
 //# sourceMappingURL=desafio.js.map
