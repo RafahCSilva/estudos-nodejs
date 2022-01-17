@@ -1,0 +1,13 @@
+button {
+  font-size: 2.5em;
+  color: white;
+  background-color: #1e90ff;
+  height: 70px;
+  width: 70px;
+  margin: 10px;
+  border-radius: 35px;
+}
+
+div {
+  outline: 1px solid greenyellow;
+}

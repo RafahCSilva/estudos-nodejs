@@ -14,6 +14,6 @@ mkdir -p \
   typescript-pt/10_Usuando_Bibliotecas_JS_com_Typescript \
   typescript-pt/11_Integracao_TypeScript_Gulp \
   typescript-pt/12_Integracao_TypeScript_Webpack \
-  typescript-pt/13_Integracao_TypeScript_React \
+  typescript-pt/13_integracao_typescript_react \
   typescript-pt/14_Integracao_TypeScript_Vue_Js \
   typescript-pt/15_Conclusao
