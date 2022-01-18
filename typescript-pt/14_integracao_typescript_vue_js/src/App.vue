@@ -1,13 +1,18 @@
 <template>
   <div id="app">
+    <Contador :valorInicial="3"/>
+    <Contador/>
   </div>
 </template>
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator'
+import Contador from '@/components/Contador.vue'
 
 @Component({
-  components: {},
+  components: {
+    Contador,
+  },
 })
 export default class App extends Vue {}
 </script>
