@@ -2,16 +2,21 @@
   <div id="app">
     <Contador :valorInicial="3"/>
     <Contador/>
+
+    <ContadorClasse/>
+    <ContadorClasse :valor-inicial="15"/>
   </div>
 </template>
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator'
 import Contador from '@/components/Contador.vue'
+import ContadorClasse from '@/components/ContadorClasse.vue'
 
 @Component({
   components: {
     Contador,
+    ContadorClasse,
   },
 })
 export default class App extends Vue {}

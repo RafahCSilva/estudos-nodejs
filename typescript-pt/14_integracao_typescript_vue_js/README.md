@@ -3,6 +3,10 @@
 npm i -g @vue/cli
 vue create 14_integracao_typescript_vue_js
 # selecione a opção 'typescript'
+
+# https://br.vuejs.org/v2/guide/typescript.html
+# https://class-component.vuejs.org/
+# https://github.com/kaorun343/vue-property-decorator
 ````
 
 ## Project setup
