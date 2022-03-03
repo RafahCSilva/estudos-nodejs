@@ -1,0 +1,20 @@
+// UPDATE
+
+// DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+db.billingcycles.updateMany(
+    // WHERE month=1 AND year=2017
+    { $and: [{ month: 1 }, { year: 2017 }] },
+    // SET credits=...
+    { $set: { credits: [{ name: "Salário", value: 5000 }] } },
+    )
+
+db.billingcycles.findOne()
+
+// SELECT
+db.billingcycles.find(
+    // WHERE credits IS NOT UNDEFINED
+    { credits: { $exists: true } },
+    // SELECT name
+    // _id=NULL para pegar de todos
+    { _id: 0, name: 1 },
+    ).pretty()

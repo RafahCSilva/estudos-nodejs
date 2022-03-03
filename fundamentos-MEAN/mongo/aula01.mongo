@@ -1,0 +1,48 @@
+// BASICO - LIST, USE e DROP COLLECTIONS
+
+// lista os bancos
+show dbs
+// +-----+------+----------+
+// |empty|name  |sizeOnDisk|
+// +-----+------+----------+
+// |false|admin |102400    |
+// |false|config|110592    |
+// |false|local |73728     |
+// +-----+------+----------+
+
+// console CLEAR
+cls
+
+// Mudar de DB, pode ser um q nao exista
+use db_finance
+// exibe ql DB esta
+db
+// mas ainda nao foi salvo nada
+show dbs
+
+// cria uma nova coleção
+db.createCollection('billingCycles')
+show dbs
+show collections
+
+// é CASE SENSITIVE
+db.createCollection('billingcycles')
+show collections
+// +-----+-------------+
+// |badge|name         |
+// +-----+-------------+
+// |     |billingcycles|
+// |     |billingCycles|
+// +-----+-------------+
+
+// Drop collection
+db.billingCycles.drop()
+show collections
+
+db.billingcycles.drop()
+show collections
+
+// Se apagar todas as colection, nao exibe mais o DB
+show dbs
+
+// Acho q DB é so um namespace para as Collections

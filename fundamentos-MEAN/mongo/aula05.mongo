@@ -1,0 +1,18 @@
+// DELETE
+
+// COUNT
+db.billingcycles.count()
+
+// DeprecationWarning: Collection.remove() is deprecated. Use deleteOne, deleteMany, findOneAndDelete, or bulkWrite.
+// DELETE  ... WHERE  month=2
+db.billingcycles.deleteMany({ month: 2 })
+db.billingcycles.count()
+
+// DELETE ... LIMIT 1
+// db.billingcycles.remove({ year: 2017 }, 1)
+db.billingcycles.deleteOne({ year: 2017 })
+db.billingcycles.count()
+
+// DROP DATABASE
+db.dropDatabase()
+show dbs

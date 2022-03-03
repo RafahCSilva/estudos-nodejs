@@ -1,0 +1,51 @@
+// WHERE E GROUP
+
+use db_finance
+
+db.billingcycles.find()
+
+// +------------------------+-----+------------+----+------------------------------------+-----------------------------------------------------------------------------------------------------------+
+// |_id                     |month|name        |year|credits                             |debts                                                                                                      |
+// +------------------------+-----+------------+----+------------------------------------+-----------------------------------------------------------------------------------------------------------+
+// |6220317b6428806ec46e62a9|1    |Janeiro/17  |2017|null                                |null                                                                                                       |
+// |622031c66428806ec46e62ab|2    |Fevereiro/17|2017|null                                |null                                                                                                       |
+// |622031fe6428806ec46e62ad|3    |Março/17    |2017|[{"name": "Salário", "value": 5000}]|[{"name": "Luz", "value": 100, "status": "PAGO"}, {"name": "Telefone", "value": 100, "status": "PENDENTE"}]|
+// +------------------------+-----+------------+----+------------------------------------+-----------------------------------------------------------------------------------------------------------+
+
+db.billingcycles.find().pretty()
+
+// Find é o where
+// FindOne é com limit1
+db.billingcycles.findOne()
+
+// WHERE month=2
+db.billingcycles.findOne({ month: 2 })
+
+// WHERE month=1 OR month=2
+db.billingcycles.find({ $or: [{ month: 1 }, { month: 2 }] })
+
+// WHERE credits IS NOT UNDEFINED
+db.billingcycles.find({ credits: { $exists: true } })
+
+// WHERE year=2017
+db.billingcycles.find({ year: 2017 })
+// ... OFFSET 1
+db.billingcycles.find({ year: 2017 }).skip(1)
+// ... LIMIT 1
+db.billingcycles.find({ year: 2017 }).limit(1)
+
+// GROUP BY
+// passa um array de passos
+db.billingcycles.aggregate([
+  // SELECT SUM()...
+  { $project: { credit: { $sum: "$credits.value" }, debt: { $sum: "$debts.value" } } },
+  // GROUP BY da subselect acima, e `_id=null` pega de todos documentos
+  { $group: { _id: null, credit: { $sum: "$credit" }, debt: { $sum: "$debt" } } },
+])
+// +----+------+----+
+// |_id |credit|debt|
+// +----+------+----+
+// |NULL|5000  |200 |
+// +----+------+----+
+
+db.billingcycles.findOne({ month: 3 })

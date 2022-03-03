@@ -1,0 +1,26 @@
+// INSERÇÕES
+
+show dbs
+use db_finance
+show collections
+
+// pode add em collection q ainda nao existe
+db.billingcycles.insert({ name: "Janeiro/17", month: 1, year: 2017 })
+show collections
+show dbs
+
+// Collection.insert() is deprecated. Use insertOne, insertMany, updateOne, or updateMany.
+db.billingcycles.insertOne({ name: "Fevereiro/17", month: 2, year: 2017 })
+
+db.billingcycles.insertOne({
+  name: "Março/17",
+  month: 3,
+  year: 2017,
+  credits: [
+    { name: "Salário", value: 5000 },
+  ],
+  debts: [
+    { name: "Luz", value: 100, status: "PAGO" },
+    { name: "Telefone", value: 100, status: "PENDENTE" },
+  ],
+})
