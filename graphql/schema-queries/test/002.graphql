@@ -1,0 +1,9 @@
+query ExampleQuery {
+  ola
+  horaAtual
+  usuarioLogado{
+    nome
+    salario
+    id
+  }
+}
