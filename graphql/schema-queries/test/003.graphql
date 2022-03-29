@@ -1,0 +1,7 @@
+query ExampleQuery {
+  horaAtual
+  produtoEmDestaque {
+    nome preco
+    precoComDesconto
+  }
+}

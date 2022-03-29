@@ -15,11 +15,19 @@ const typeDefs = gql`
     salario: Float
   }
 
+  type Produto {
+    nome: String!
+    preco: Float!
+    desconto: Float
+    precoComDesconto: Float
+  }
+
   # ponto de entrada da sua API!
   type Query {
     ola: String
     horaAtual: Date
     usuarioLogado: Usuario
+    produtoEmDestaque: Produto
   }
 `
 
@@ -43,10 +51,22 @@ const resolvers = {
         salario_real: 1234.56,
       }
     },
+    produtoEmDestaque () {
+      return {
+        nome: 'Lapis',
+        preco: 1.99,
+        // desconto: 0.1,
+      }
+    },
   },
   Usuario: {
     // um resolver na query `Usuario{}` para mapear um prop
     salario (usuario) { return usuario.salario_real},
+  },
+  Produto: {
+    precoComDesconto (produto) {
+      return produto.preco * (1 - (produto.desconto || 0))
+    },
   },
 }
 
