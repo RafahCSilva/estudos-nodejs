@@ -1,12 +1,12 @@
 const DB = require('../data/db')
 module.exports = {
-  novoUsuario (_, args) {
-    if (DB.usuarios.some(u => u.email === args.email)) {
+  novoUsuario (_, {dados}) {
+    if (DB.usuarios.some(u => u.email === dados.email)) {
       throw new Error('E-mail já cadastrado')
     }
 
     const novo = {
-      ...args,
+      ...dados,
       id: DB.proximoId(), perfil_id: 1, status: 'ATIVO',
     }
     DB.usuarios.push(novo)
