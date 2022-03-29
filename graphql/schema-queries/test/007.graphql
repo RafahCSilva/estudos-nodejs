@@ -1,0 +1,9 @@
+query ExampleQuery {
+  horaAtual
+  usuarios {
+    id nome email
+    perfil{
+      nome
+    }
+  }
+}
