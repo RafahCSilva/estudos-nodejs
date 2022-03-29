@@ -1,4 +1,4 @@
-const DB = require('../data/db')
+const DB = require('../../data/db')
 
 module.exports = {
   novoUsuario (_, { dados }) {
