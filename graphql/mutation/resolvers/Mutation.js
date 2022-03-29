@@ -32,4 +32,13 @@ module.exports = {
     //   ...args,
     // })[0]
   },
+
+  alterarUsuarioDesafio (_, { filtro, dados }) {
+    const index = DB.usuariosWhere(filtro)
+    if (index < 0) return null
+    return DB.usuarios[index] = {
+      ...DB.usuarios[index],
+      ...dados,
+    }
+  },
 }

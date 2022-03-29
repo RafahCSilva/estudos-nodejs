@@ -1,0 +1,23 @@
+# UPDATE
+mutation {
+  alterarUsuarioDesafio (
+    filtro:{
+      # id: 1
+      email: "jsilva@zemail.com"
+    }
+    dados: {
+      nome: "Dani"
+      email: "asdasf@email.com"
+      idade: 26
+    }
+  ) {
+    id nome email idade
+  }
+}
+
+# INDEX
+query {
+  usuarios {
+    id nome email idade
+  }
+}

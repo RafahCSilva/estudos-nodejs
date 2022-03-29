@@ -11,4 +11,9 @@ type Mutation {
     email: String
     idade: Int
   ): Usuario
+
+  alterarUsuarioDesafio(
+    filtro: UsuarioFiltro!
+    dados: UsuarioInput!
+  ): Usuario
 }
