@@ -1,0 +1,6 @@
+query ExampleQuery {
+  usuarios {
+    nome
+    status
+  }
+}
