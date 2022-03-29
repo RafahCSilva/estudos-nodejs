@@ -1,0 +1,15 @@
+# DELETE
+mutation {
+  excluirUsuario (
+    id: 3
+  ) {
+    id nome
+  }
+}
+
+# INDEX
+query {
+  usuarios {
+    id nome
+  }
+}
