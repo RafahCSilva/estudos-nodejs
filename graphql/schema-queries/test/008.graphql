@@ -1,0 +1,12 @@
+fragment usuarioCompleto on Usuario {
+  id nome email idade salario vip
+  perfil { nome id }
+}
+
+
+query ExampleQuery {
+  horaAtual
+  usuario(id:3) {
+    ...usuarioCompleto
+  }
+}
