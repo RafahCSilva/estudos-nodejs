@@ -1,0 +1,7 @@
+query ExampleQuery {
+  horaAtual
+  numerosMegaSena
+  usuario(id: 2){
+    nome email
+  }
+}
