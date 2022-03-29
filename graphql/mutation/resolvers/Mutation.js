@@ -1,6 +1,7 @@
 const DB = require('../data/db')
+
 module.exports = {
-  novoUsuario (_, {dados}) {
+  novoUsuario (_, { dados }) {
     if (DB.usuarios.some(u => u.email === dados.email)) {
       throw new Error('E-mail já cadastrado')
     }
@@ -13,14 +14,14 @@ module.exports = {
     return novo
   },
 
-  excluirUsuario (_, { id }) {
-    const index = DB.usuarios.findIndex(u => u.id === id)
+  excluirUsuario (_, { filtro }) {
+    const index = DB.usuariosWhere(filtro)
     if (index < 0) return null
     return DB.usuarios.splice(index, 1)[0] || null
   },
 
   alterarUsuario (_, args) {
-    const index = DB.usuarios.findIndex(u => u.id === args.id)
+    const index = DB.usuariosWhere({ id: args.id })
     if (index < 0) return null
     return DB.usuarios[index] = {
       ...DB.usuarios[index],

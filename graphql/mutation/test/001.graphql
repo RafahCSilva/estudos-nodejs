@@ -1,4 +1,7 @@
-query ExampleQuery {
+query {
+  usuario( id: 2 ){
+    id nome
+  }
   usuarios {
     nome
     status

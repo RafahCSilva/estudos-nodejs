@@ -36,4 +36,12 @@ const perfils = [
   { id: 2, nome: 'Administrador' },
 ]
 
-module.exports = { usuarios, perfils, proximoId }
+function usuariosWhere (filtro) {
+  console.log('filtro', filtro)
+  if (!filtro) return -1
+  if (!!filtro.id) return usuarios.findIndex(u => u.id === filtro.id)
+  if (!!filtro.email) return usuarios.findIndex(u => u.email === filtro.email)
+  return -1
+}
+
+module.exports = { usuarios, perfils, proximoId, usuariosWhere }

@@ -1,7 +1,10 @@
 # DELETE
 mutation {
   excluirUsuario (
-    id: 3
+    filtro:{
+      # id: 3
+      email: "jsilva@zemail.com"
+    }
   ) {
     id nome
   }
@@ -10,6 +13,6 @@ mutation {
 # INDEX
 query {
   usuarios {
-    id nome
+    id nome email
   }
 }
