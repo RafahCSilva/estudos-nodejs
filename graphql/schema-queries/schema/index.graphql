@@ -1,0 +1,6 @@
+#import Perfil from 'perfil.graphql'
+#import Produto from 'produto.graphql'
+#import Usuario from 'usuario.graphql'
+#import Query from 'Query.graphql'
+
+scalar Date
