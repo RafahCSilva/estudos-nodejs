@@ -5,6 +5,7 @@ const typeDefs = gql`
   # ponto de entrada da sua API!
   type Query{
     ola: String
+    horaAtual: String
   }
 `
 
@@ -14,6 +15,9 @@ const resolvers = {
   Query: {
     ola () {
       return 'Basta retornar uma string'
+    },
+    horaAtual () {
+      return (new Date()).toLocaleString()
     },
   },
 }
