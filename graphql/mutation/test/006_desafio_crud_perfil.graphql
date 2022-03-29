@@ -1,0 +1,42 @@
+# INDEX
+query {
+  perfils {
+    id nome
+  }
+}
+
+# INSERT
+mutation {
+  novoPerfil (
+    dados: {
+      nome: "Ana"
+    }
+  ) {
+    id nome
+  }
+}
+
+# DELETE
+mutation {
+  excluirPerfil (
+    filtro:{
+      id: 5
+    }
+  ) {
+    id nome
+  }
+}
+
+# UPDATE
+mutation {
+  alterarPerfil (
+    filtro:{
+      id: 1
+    }
+    dados: {
+      nome: "Dani"
+    }
+  ) {
+    id nome
+  }
+}
