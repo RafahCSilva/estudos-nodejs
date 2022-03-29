@@ -1,0 +1,9 @@
+query ExampleQuery {
+  horaAtual
+  perfils{
+    nome id
+  }
+  perfil(id: 2){
+    nome
+  }
+}

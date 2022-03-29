@@ -1,23 +1,16 @@
 const { ApolloServer, gql } = require('apollo-server')
 
 const usuarios = [
-  {
-    id: 1,
-    nome: 'João Silva',
-    email: 'jsilva@zemail.com',
-    idade: 29,
-  }, {
-    id: 2,
-    nome: 'Rafael Junior',
-    email: 'rafajun@wemail.com',
-    idade: 31,
-  }, {
-    id: 3,
-    nome: 'Daniela Smith',
-    email: 'danismi@umail.com',
-    idade: 24,
-  },
+  { id: 1, nome: 'João Silva', email: 'jsilva@zemail.com', idade: 29 },
+  { id: 2, nome: 'Rafael Junior', email: 'rafajun@wemail.com', idade: 31 },
+  { id: 3, nome: 'Daniela Smith', email: 'danismi@umail.com', idade: 24 },
 ]
+
+const perfils = [
+  { id: 1, nome: 'Comum' },
+  { id: 2, nome: 'Administrador' },
+]
+
 // Essa template string é a definicao do schema
 const typeDefs = gql`
 
@@ -32,6 +25,10 @@ const typeDefs = gql`
     idade: Int
     salario: Float
     vip: Boolean
+  }
+  type Perfil {
+    id: Int!
+    nome: String!
   }
 
   type Produto {
@@ -50,6 +47,8 @@ const typeDefs = gql`
     numerosMegaSena: [Int!]!
     usuarios: [Usuario!]
     usuario(id: ID): Usuario
+    perfils: [Perfil!]
+    perfil(id: Int): Perfil
   }
 `
 
@@ -91,6 +90,12 @@ const resolvers = {
     },
     usuario (_, { id }) {
       return usuarios.filter((u) => u.id == id)[0] || null
+    },
+    perfils () {
+      return perfils
+    },
+    perfil (_, { id }) {
+      return perfils.filter((p) => p.id === id)[0] || null
     },
   },
   Usuario: {
