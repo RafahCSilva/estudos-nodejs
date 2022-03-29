@@ -5,12 +5,10 @@ enum UsuarioStatus {
 }
 
 type Usuario {
-  id: ID!
+  id: Int
   nome: String!
   email: String!
   idade: Int
-  salario: Float
-  vip: Boolean
   perfil: Perfil
   status: UsuarioStatus
 }
