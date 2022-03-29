@@ -1,0 +1,18 @@
+# UPDATE
+mutation {
+  alterarUsuario (
+    id: 3
+    nome: "Dani"
+    email: "asdasf@email.com"
+    idade: 26
+  ) {
+    id nome email idade
+  }
+}
+
+# INDEX
+query {
+  usuarios {
+    id nome email idade
+  }
+}
