@@ -1,5 +1,23 @@
 const { ApolloServer, gql } = require('apollo-server')
 
+const usuarios = [
+  {
+    id: 1,
+    nome: 'João Silva',
+    email: 'jsilva@zemail.com',
+    idade: 29,
+  }, {
+    id: 2,
+    nome: 'Rafael Junior',
+    email: 'rafajun@wemail.com',
+    idade: 31,
+  }, {
+    id: 3,
+    nome: 'Daniela Smith',
+    email: 'danismi@umail.com',
+    idade: 24,
+  },
+]
 // Essa template string é a definicao do schema
 const typeDefs = gql`
 
@@ -13,6 +31,7 @@ const typeDefs = gql`
     email: String!
     idade: Int
     salario: Float
+    vip: Boolean
   }
 
   type Produto {
@@ -29,6 +48,7 @@ const typeDefs = gql`
     usuarioLogado: Usuario
     produtoEmDestaque: Produto
     numerosMegaSena: [Int!]!
+    usuarios: [Usuario!]
   }
 `
 
@@ -64,6 +84,9 @@ const resolvers = {
         .fill(0)
         .map(() => parseInt(Math.random() * 60 + 1))
         .sort((a, b) => a - b)
+    },
+    usuarios () {
+      return usuarios
     },
   },
   Usuario: {
