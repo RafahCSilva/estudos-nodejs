@@ -1,0 +1,17 @@
+# INSERT
+mutation {
+  novoUsuario (
+    nome: "Ana"
+    email: "ana@empresa.com"
+    idade: 34
+  ) {
+    id nome
+  }
+}
+
+# INDEX
+query {
+  usuarios {
+    id nome
+  }
+}
