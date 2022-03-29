@@ -2,10 +2,14 @@ const { ApolloServer, gql } = require('apollo-server')
 
 // Essa template string é a definicao do schema
 const typeDefs = gql`
+
+  # scalar é os tipos, pois somente tem os basicos: Int, Float, String, Boolean e ID
+  scalar Date
+
   # ponto de entrada da sua API!
   type Query{
     ola: String
-    horaAtual: String
+    horaAtual: Date
   }
 `
 
@@ -17,7 +21,8 @@ const resolvers = {
       return 'Basta retornar uma string'
     },
     horaAtual () {
-      return (new Date()).toLocaleString()
+      // return (new Date()).toLocaleString()
+      return new Date()
     },
   },
 }
