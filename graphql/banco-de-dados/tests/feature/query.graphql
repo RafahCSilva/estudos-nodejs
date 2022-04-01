@@ -40,3 +40,19 @@ query {
     }
   }
 }
+
+# Query aninhada
+query {
+  usuarios {
+    id
+    nome
+    email
+    perfis {
+      nome
+      rotulo
+      usuarios {
+        nome
+      }
+    }
+  }
+}
