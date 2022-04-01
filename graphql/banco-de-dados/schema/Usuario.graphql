@@ -9,7 +9,7 @@ input UsuarioInput {
   nome: String
   email: String
   senha: String
-#  perfis: [PerfilFiltro]
+  perfis: [PerfilFiltro]
 }
 
 input UsuarioFiltro {

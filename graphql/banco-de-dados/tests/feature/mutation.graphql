@@ -65,3 +65,53 @@ mutation {
     id nome rotulo
   }
 }
+
+
+# Mutations de Usuario com Join
+
+mutation {
+  novoUsuario(
+    dados: {
+      nome: "cardoso"
+      email: "cardoos@rcs.com3"
+      senha: "123456"
+      perfis : [ {id: 1}, {id: 4}]
+    }
+  ){
+    id nome email
+    perfis{
+      nome rotulo
+    }
+  }
+}
+mutation {
+  novoUsuario(
+    dados: {
+      nome: "cardoso"
+      email: "cardoos@rcs.com4"
+      senha: "123456"
+      perfis : [ {nome: "admin"}, {id: 4}]
+    }
+  ){
+    id nome email
+    perfis{
+      nome rotulo
+    }
+  }
+}
+
+mutation {
+  alterarUsuario(
+    filtro: {id: 4}
+    dados: {
+      nome: "rafael2"
+      email: "rcs@rcs.com2"
+      senha: "1234567"
+      perfis : [ {id: 1}, {id: 2}, {id: 3}, {id: 4}]
+    }
+  ){
+    id nome email perfis {
+      id nome rotulo
+    }
+  }
+}
