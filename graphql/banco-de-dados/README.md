@@ -1,5 +1,7 @@
 # GraphQL + MySQL
 
+[knexjs.org](http://knexjs.org/)
+
 ````shell
 # dependencies
 npm i -s knex mysql
