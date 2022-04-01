@@ -2,7 +2,12 @@ const db = require('../../config/db')
 
 module.exports = {
   async novoPerfil (_, { dados }) {
-    // TODO: Implementar
+    let [id] = await db('perfis')
+      .insert(dados)
+
+    return db('perfis')
+      .where({ id })
+      .first()
   },
   async excluirPerfil (_, { filtro }) {
     // TODO: Implementar

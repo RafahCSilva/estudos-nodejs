@@ -1,0 +1,26 @@
+# Mutations de Usuario
+
+mutation {
+  novoUsuario(
+    dados: {
+      nome: "rafael"
+      email: "rcs@rcs.com"
+      senha: "123456"
+    }
+  ){
+    id nome email
+  }
+}
+
+# Mutations de Perfil
+
+mutation {
+  novoPerfil(
+    dados: {
+      nome: "topzera"
+      rotulo: "Topzera"
+    }
+  ){
+    id nome rotulo
+  }
+}
