@@ -1,0 +1,30 @@
+query {
+  usuarios {
+    id
+    nome
+    email
+  }
+
+  usuario (
+    filtro: { id: 2 }
+  ){
+    nome
+    id
+  }
+}
+
+query {
+  perfis {
+    id
+    nome
+    rotulo
+  }
+
+  perfil (
+    filtro: { id: 3 }
+  ){
+    id
+    nome
+    rotulo
+  }
+}
