@@ -20,6 +20,19 @@ mutation {
   }
 }
 
+mutation {
+  alterarUsuario(
+    filtro: {id: 4}
+    dados: {
+      nome: "rafael2"
+      email: "rcs@rcs.com2"
+      senha: "1234567"
+    }
+  ){
+    id nome email
+  }
+}
+
 # Mutations de Perfil
 
 mutation {
@@ -38,5 +51,17 @@ mutation {
     filtro: {id:3}
   ){
     nome
+  }
+}
+
+mutation {
+  alterarPerfil(
+    filtro: {id:4}
+    dados: {
+      nome: "topzera2"
+      rotulo: "Topzera2"
+    }
+  ){
+    id nome rotulo
   }
 }

@@ -11,7 +11,6 @@ module.exports = {
   },
   async excluirUsuario (_, { filtro }) {
     const usuario = await require('../Query/usuario').usuario(_, { filtro })
-
     if (!usuario) return null
 
     await db('usuarios_perfis').where({ 'usuario_id': usuario.id }).delete()
@@ -20,6 +19,12 @@ module.exports = {
     return usuario
   },
   async alterarUsuario (_, { filtro, dados }) {
-    // TODO: Implementar
+    let usuario = await require('../Query/usuario').usuario(_, { filtro })
+    if (!usuario) return null
+
+    await db('usuarios').where({ 'id': usuario.id }).update(dados)
+
+    usuario = await require('../Query/usuario').usuario(_, { filtro })
+    return usuario
   },
 }
