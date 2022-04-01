@@ -10,7 +10,14 @@ module.exports = {
       .first()
   },
   async excluirPerfil (_, { filtro }) {
-    // TODO: Implementar
+    const perfil = await require('../Query/perfil').perfil(_, { filtro })
+
+    if (!perfil) return null
+
+    await db('usuarios_perfis').where({ 'perfil_id': perfil.id }).delete()
+    await db('perfis').where({ 'id': perfil.id }).delete()
+
+    return perfil
   },
   async alterarPerfil (_, { filtro, dados }) {
     // TODO: Implementar

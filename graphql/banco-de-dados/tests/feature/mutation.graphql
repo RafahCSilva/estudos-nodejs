@@ -12,6 +12,14 @@ mutation {
   }
 }
 
+mutation {
+  excluirUsuario(
+    filtro: {id: 3}
+  ){
+    nome
+  }
+}
+
 # Mutations de Perfil
 
 mutation {
@@ -22,5 +30,13 @@ mutation {
     }
   ){
     id nome rotulo
+  }
+}
+
+mutation {
+  excluirPerfil(
+    filtro: {id:3}
+  ){
+    nome
   }
 }
